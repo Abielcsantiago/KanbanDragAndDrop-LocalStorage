@@ -6,7 +6,9 @@ function getLocalStorage(){
         for(let i = 1; i <= localStorage.length; i++){
             const id = i;
             const stringResponse = localStorage.getItem(String(i));
+            console.log(stringResponse)
             const arrayResponse = stringResponse.split(",")
+            console.log(arrayResponse)
             const task = arrayResponse[0];
             const priority = arrayResponse[1];
             const stage = arrayResponse[2];
