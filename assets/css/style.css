@@ -33,7 +33,7 @@ img{
 }
 #kanban{
     display:grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+    grid-template-columns: repeat(4 ,minmax(250px, 1fr));
     gap:20px;
     justify-content: center;
     padding:20px;
@@ -145,4 +145,13 @@ img{
     background-color:transparent;
     width:20px;    
 }
-#id-task{}
+@media (max-width:1090px){
+    #kanban{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:650px){
+    #kanban{
+        grid-template-columns: 1fr;
+    }
+}
