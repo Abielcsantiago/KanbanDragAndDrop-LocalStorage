@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban DragAndDrop</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <h1 class="align-content">Kanban</h1>
+    <main id="kanban" class="align-content">
+        
+        <section class="kanban-stage" id="to-do">
+            <div class="header-kanban">
+                <h2>To Do</h2>
+                <button class="open-form">
+                    <img src="./assets/img/addition.png" alt="">
+                </button>     
+            </div>
+            <div class="container-kanban">
+                <form action="" class="form-add">
+                    <label for="input-to-do">Task</label>
+                    <input type="text" name="" id="input-to-do" class="input-task input-box" placeholder="Adicione uma tarefa">
+                    <label for="priority">Priority</label>
+                    <select name="" id="priority" class="input-box priority">
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Critical</option>
+                    </select>
+                    <input type="submit" value="Add" class="bttn-add">
+                </form>
+                <ul class="kanban-list" id="to-do-list"></ul>   
+            </div>
+        </section>
+
+        <section class="kanban-stage" id="working">
+            <div class="header-kanban">
+                <h2>Working</h2>
+                <button class="open-form">
+                    <img src="./assets/img/addition.png" alt="">
+                </button>      
+            </div>
+            <div class="container-kanban">
+                <form action="" class="form-add">
+                    <label for="input-working">Task</label>
+                    <input type="text" name="" id="input-working" class="input-task input-box" placeholder="Adicione uma tarefa">
+                    <label for="priority">Priority</label>
+                    <select name="" id="priority" class="input-box priority">
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Critical</option>
+                    </select>
+                    <input type="submit" value="Add" class="bttn-add">
+                </form>
+                <ul class="kanban-list" id="working-list">
+                </ul>   
+            </div>
+        </section>
+
+        <section class="kanban-stage" id="review">
+            <div class="header-kanban">
+                <h2>Review</h2>
+                <button class="open-form">
+                    <img src="./assets/img/addition.png" alt="">
+                </button>     
+            </div>
+            <div class="container-kanban">
+                <form action="" class="form-add">
+                    <label for="input-review">Task</label>
+                    <input type="text" name="" id="input-review" class="input-task input-box" placeholder="Adicione uma tarefa">
+                    <label for="priority">Priority</label>
+                    <select name="" id="priority" class="input-box priority">
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Critical</option>
+                    </select>
+                    <input type="submit" value="Add" class="bttn-add">
+                </form>
+                <ul class="kanban-list" id="review-list"></ul>   
+            </div>
+        </section>
+
+        <section class="kanban-stage" id="done">
+            <div class="header-kanban">
+                <h2>Done</h2>
+                <button class="open-form">
+                    <img src="./assets/img/addition.png" alt="">
+                </button>      
+            </div>
+            <div class="container-kanban">
+                <form action="" class="form-add">
+                    <label for="input-to-do">Task</label>
+                    <input type="text" name="" id="input-done" class="input-task input-box" placeholder="Adicione uma tarefa">
+                    <label for="priority">Priority</label>
+                    <select name="" id="priority" class="input-box priority">
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Critical</option>
+                    </select>
+                    <input type="submit" value="Add" class="bttn-add">
+                </form>
+                <ul class="kanban-list" id="done-list"></ul>   
+            </div>
+        </section>
+        <template id="template-task">
+            <li class="task" draggable="true" id="">
+                <p class="content">
+        
+                </p>
+                <div class="details">
+                    <p class="priority-container">
+                        Priority: 
+                        <span class="priority-task"></span>
+                    </p>
+                    <button class="bttn-delete">
+                        <img src="./assets/img/delete.png" alt="Deletar" title="Apagar tarefa">
+                    </button>   
+                </div>
+            </li>
+        </template>
+    </main> 
+    <script src="./assets/js/localStorage.js"></script>  
+    <script src="./assets/js/addTask.js"></script>
+</body>
+</html>
