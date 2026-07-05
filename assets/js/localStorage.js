@@ -6,7 +6,6 @@ function getLocalStorage(){
         for(let i = 1; i <= localStorage.length; i++){
             const id = i;
             const stringResponse = localStorage.getItem(String(i));
-            console.log(stringResponse)
             const arrayResponse = stringResponse.split(",")
             console.log(arrayResponse)
             const task = arrayResponse[0];
@@ -23,7 +22,6 @@ function alterDataStage(item, stage){
     const itemId = item.getAttribute("id");
     const task = item.querySelector(".content").innerText;
     const priority = item.getAttribute("data-priority");
-    console.log(priority)
     localStorage.removeItem(itemId)
     localStorage.setItem(itemId, [task, priority, stage])
 }
