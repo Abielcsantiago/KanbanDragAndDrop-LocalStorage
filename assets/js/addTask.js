@@ -19,8 +19,11 @@ function addTask(event){
     const kanbanStage = bttn.closest(".kanban-stage")
     const kanbanList = kanbanStage.querySelector(".kanban-list");
     const listId = kanbanList.getAttribute("id")
-    const task = kanbanStage.querySelector(".input-task").value;
-    const priority = kanbanStage.querySelector(".priority").value;
+    const inputTask = kanbanStage.querySelector(".input-task");
+    const inputPriority = kanbanStage.querySelector(".priority")
+    const task = inputTask.value;
+    inputTask.value = "";
+    const priority = inputPriority.value;
     if(task){
         const itemKanban = createItemKanban(task, priority, listId);
         kanbanList.append(itemKanban)

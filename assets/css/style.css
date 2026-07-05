@@ -114,6 +114,12 @@ img{
     padding:10px;
     gap:10px;
 }
+.task .content{
+    padding:3px 5px;
+    line-height: 20px;
+    font-weight:500;
+    text-align:justify;
+}
 .task .details{
     display:flex;
     justify-content:space-between;
