@@ -36,13 +36,13 @@ function createItemKanban(task, priority, stage, id){
     const itemKanban = documentFragment.querySelector(".task");
     itemKanban.querySelector(".content").innerText = task;
     if(!id){
-        if(localStorage.length == 0){
+        if(Number(localStorage.length) === 0){
             id = 1;
         }else{
             const keys = Object.keys(localStorage);
             let bigger = 0;
             keys.forEach(key => {
-                if(Number(key) > bigger){
+                if(Number(key) >= bigger){
                     bigger = Number(key) + 1; 
                 }
             })
