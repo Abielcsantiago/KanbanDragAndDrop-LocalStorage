@@ -40,13 +40,12 @@ function createItemKanban(task, priority, stage, id){
             id = 1;
         }else{
             const keys = Object.keys(localStorage);
-            let bigger = 0;
+            id = 0;
             keys.forEach(key => {
-                if(Number(key) >= bigger){
-                    bigger = Number(key) + 1; 
+                if(Number(key) >= id){
+                    id = Number(key) + 1; 
                 }
             })
-            id = bigger;
         }
         localStorage.setItem(String(id), [task, priority, stage])  
     }
