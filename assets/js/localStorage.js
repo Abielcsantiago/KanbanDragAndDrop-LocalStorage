@@ -1,20 +1,21 @@
 addEventListener("load", getLocalStorage)
 function getLocalStorage(){
-    console.log("Chamou getLocalStorage")
-    console.log(localStorage.length)
     if(localStorage.length){
-        for(let i = 1; i <= localStorage.length; i++){
-            const id = i;
-            const stringResponse = localStorage.getItem(String(i));
-            const arrayResponse = stringResponse.split(",")
-            console.log(arrayResponse)
-            const task = arrayResponse[0];
-            const priority = arrayResponse[1];
-            const stage = arrayResponse[2];
-            const itemKanban = createItemKanban(task, priority, stage, id);
-            const list = document.querySelector(`#${stage}`);
-            list.append(itemKanban);
-        } 
+        const ids = Object.keys(localStorage);
+        for(let i in ids){
+            const id = ids[i];
+            const stringResponse = localStorage.getItem(String(id));
+            const arrayResponse = stringResponse.split(',')
+            const task = {
+                content: arrayResponse[0],
+                priority: arrayResponse[1],
+                stage: arrayResponse[2],
+                id: id
+            };
+            const itemKanban = createItemKanban(task.content, task.priority, task.stage, task.id);
+            const list = document.querySelector(`#${task.stage}`);
+            list.appendChild(itemKanban);
+        }
         addDragEvent()
     }
 }
