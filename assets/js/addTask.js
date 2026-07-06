@@ -41,6 +41,7 @@ function createItemKanban(task, priority, stage, id){
         }else{
             const keys = Object.keys(localStorage);
             id = 0;
+            
             keys.forEach(key => {
                 if(Number(key) >= id){
                     id = Number(key) + 1; 
