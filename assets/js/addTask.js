@@ -36,7 +36,18 @@ function createItemKanban(task, priority, stage, id){
     const itemKanban = documentFragment.querySelector(".task");
     itemKanban.querySelector(".content").innerText = task;
     if(!id){
-        id = Number(localStorage.length) + 1;
+        if(localStorage.length == 0){
+            id = 1;
+        }else{
+            const keys = Object.keys(localStorage);
+            let bigger = 0;
+            keys.forEach(key => {
+                if(Number(key) > bigger){
+                    bigger = Number(key) + 1; 
+                }
+            })
+            id = bigger;
+        }
         localStorage.setItem(String(id), [task, priority, stage])  
     }
     //Se o elemento não tem ID, ele tambem não tem stage, já que é definido na criação
